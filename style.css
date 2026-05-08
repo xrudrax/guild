@@ -316,6 +316,224 @@ body {
     margin: 0.3rem 0;
 }
 
+/* ===== WEATHER SECTION ===== */
+#weather h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00d4ff;
+    margin-bottom: 2rem;
+}
+
+.weather-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.weather-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.weather-search input {
+    flex: 1;
+    min-width: 200px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00d4ff;
+    border-radius: 5px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.weather-search input::placeholder {
+    color: #888;
+}
+
+.weather-search input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.weather-content {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 110, 0.05));
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.weather-current {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 110, 0.1));
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.current-info h2 {
+    color: #00d4ff;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.coordinates {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #00d4ff;
+}
+
+.weather-icon {
+    font-size: 5rem;
+}
+
+.weather-details {
+    flex: 1;
+}
+
+.temp {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00d4ff;
+    line-height: 1;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    margin: 0.5rem 0;
+}
+
+.feels-like {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.current-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+}
+
+.stat-label {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    color: #00d4ff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.weather-forecast {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.weather-forecast h3 {
+    color: #00d4ff;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.forecast-card {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(255, 0, 110, 0.05));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d4ff;
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+}
+
+.forecast-day {
+    color: #00d4ff;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.forecast-date {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+}
+
+.forecast-icon {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.forecast-desc {
+    color: #b0b0b0;
+    font-size: 0.8rem;
+    margin: 0.5rem 0;
+}
+
+.forecast-temps {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.temp-max {
+    color: #ff6464;
+}
+
+.temp-min {
+    color: #64b4ff;
+}
+
+.forecast-precip {
+    color: #888;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
 /* ===== MODAL ===== */
 .modal {
     display: none;
@@ -547,6 +765,19 @@ body {
         gap: 1rem;
         text-align: center;
     }
+
+    .current-weather {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .weather-search {
+        flex-direction: column;
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
 
 @media (max-width: 480px) {
@@ -565,5 +796,13 @@ body {
 
     .player-detail-info {
         grid-template-columns: 1fr;
+    }
+
+    .temp {
+        font-size: 2rem;
+    }
+
+    .weather-icon {
+        font-size: 3rem;
     }
 }
