@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Empire Guild - Official Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">⚔️ Prime Empire</div>
+            <div class="nav-links">
+                <button class="nav-btn" onclick="showSection('home')">🏰 Home</button>
+                <button class="nav-btn" onclick="showSection('about')">📜 About</button>
+                <button class="nav-btn" onclick="showSection('players')">👥 Players</button>
+                <button class="nav-btn admin-btn" onclick="showSection('admin')">🔐 Admin</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container main-content">
+        
+        <!-- HOME SECTION -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>⚔️ PRIME EMPIRE GUILD ⚔️</h1>
+                <p class="tagline">Rise to Glory, Conquer Together</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number" id="stat-members">0</div>
+                        <div class="stat-label">Members</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Eternal</div>
+                        <div class="stat-label">Legacy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">🏆</div>
+                        <div class="stat-label">Champions</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="showSection('players')">View Our Warriors</button>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <div class="about-content">
+                <h1>📜 About Prime Empire</h1>
+                <div class="about-box">
+                    <h2>Our Mission</h2>
+                    <p>Prime Empire stands as a beacon of strength, unity, and honor. We are more than just a guild—we are a family of warriors, mages, and adventurers bound by a common goal: to achieve greatness together.</p>
+                </div>
+                <div class="about-box">
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li>⚔️ <strong>Honor</strong> - We face every challenge with courage</li>
+                        <li>🤝 <strong>Unity</strong> - Together, we are unstoppable</li>
+                        <li>🎯 <strong>Excellence</strong> - We strive for perfection</li>
+                        <li>🌟 <strong>Growth</strong> - Every member is valuable and important</li>
+                    </ul>
+                </div>
+                <div class="about-box">
+                    <h2>Guild History</h2>
+                    <p>Founded with the vision of creating a legendary guild, Prime Empire has grown from a small group of adventurers to a powerhouse of gaming excellence. Our members have conquered countless challenges and forged unforgettable memories together.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAYERS SECTION -->
+        <section id="players" class="section">
+            <h1>👥 Guild Members</h1>
+            <div id="playersGrid" class="players-grid">
+                <!-- Players will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ADMIN SECTION -->
+        <section id="admin" class="section">
+            <h1>🔐 Admin Dashboard</h1>
+            
+            <!-- Login Panel -->
+            <div id="adminLogin" class="admin-login">
+                <div class="login-box">
+                    <h2>Admin Login</h2>
+                    <input type="password" id="adminPassword" placeholder="Enter admin password" onkeypress="if(event.key==='Enter') checkAdminPassword()">
+                    <button class="btn btn-primary" onclick="checkAdminPassword()">Login</button>
+                    <p style="color: #888; font-size: 0.9rem; margin-top: 1rem;">Default password: admin123</p>
+                </div>
+            </div>
+
+            <!-- Admin Panel -->
+            <div id="adminPanel" style="display: none;" class="admin-panel">
+                <div class="admin-header">
+                    <h2>Welcome Admin! 👑</h2>
+                    <button class="btn btn-secondary" onclick="logout()">Logout</button>
+                </div>
+
+                <!-- Add Player Section -->
+                <div class="admin-section">
+                    <h3>➕ Add New Player</h3>
+                    <form onsubmit="event.preventDefault(); addPlayer();">
+                        <input type="text" id="newPlayerName" placeholder="Player Name *" required>
+                        <input type="text" id="newPlayerRole" placeholder="Role (e.g., Warrior, Mage)">
+                        <input type="number" id="newPlayerLevel" placeholder="Level" min="1" value="1">
+                        <input type="text" id="newPlayerClass" placeholder="Class">
+                        <input type="date" id="newPlayerJoinDate">
+                        <textarea id="newPlayerBio" placeholder="Bio/Description" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Add Player</button>
+                    </form>
+                </div>
+
+                <!-- Players List -->
+                <div class="admin-section">
+                    <h3>📋 Current Players</h3>
+                    <div id="playersList">
+                        <!-- Players list will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Security Section -->
+                <div class="admin-section">
+                    <h3>🔒 Security</h3>
+                    <div style="background: rgba(255, 100, 100, 0.1); padding: 1rem; border-radius: 5px; border-left: 3px solid #ff6464;">
+                        <label>Change Admin Password:</label>
+                        <input type="password" id="newAdminPassword" placeholder="New password" style="margin-top: 0.5rem;">
+                        <button class="btn btn-secondary" onclick="changeAdminPassword()" style="margin-top: 0.5rem;">Update Password</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Player Detail Modal -->
+    <div id="playerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="playerDetail"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
